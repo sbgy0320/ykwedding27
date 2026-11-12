@@ -11,8 +11,8 @@
 <meta property="og:description" content="3월 20일(토) 낮 12시 / 메리다웨딩컨벤션 달리아홀">
 <meta property="og:url" content="https://sbgy0320.github.io/ykwedding27/">
 <meta property="og:image" content="https://sbgy0320.github.io/ykwedding27/thumbnail.jpg">
-<meta property="og:image:width" content="800">
-<meta property="og:image:height" content="800">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="703">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#faf6ee;--paper:#f1ead9;--ink:#3b3429;--sub:#857b69;--line:#ddd2bb;--acc:#86745a;--on:#fff;
@@ -311,7 +311,7 @@ document.querySelectorAll('[data-c]').forEach(function(b){b.onclick=function(){
 var PH='<svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>',EN='<svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>';
 /* 전화번호를 '' 안에 넣으면 전화/문자 버튼이 활성화돼요 */
 var CT=[['신랑측 GROOM'],['신랑','윤상빈','010-2655-6392'],['신랑 아버지','윤재철','010-4492-6828'],['신랑 어머니','전하윤','010-6392-6828'],['신부측 BRIDE'],['신부','김가영','010-3812-3354'],['신부 아버지','김경태','010-9403-3354']];
-document.getElementById('cl').innerHTML=CT.map(function(r){if(r.length<2)return '<p class="gl">'+r[0]+'</p>';var t=r[2];return '<div class="cr"><i>'+r[0]+'</i><span>'+r[1]+(t?'<small class="nm" style="display:none;color:var(--sub);font-size:12px">'+t+'</small>':'')+'</span>'+(t?'<a href="tel:'+t+'" target="_top" aria-label="전화">'+PH+'</a><a href="sms:'+t+'" target="_top" aria-label="문자">'+EN+'</a>':'<em>'+PH+'</em><em>'+EN+'</em>')+'</div>'}).join('');
+document.getElementById('cl').innerHTML=CT.map(function(r){if(r.length<2)return '<p class="gl">'+r[0]+'</p>';var t=r[2];return '<div class="cr"><i>'+r[0]+'</i><span>'+r[1]+(t?'<small class="nm" style="display:none;color:var(--sub);font-size:12px">'+t+'</small>':'')+'</span>'+(t?'<a href="tel:'+t+'" aria-label="전화">'+PH+'</a><a href="sms:'+t+'" aria-label="문자">'+EN+'</a>':'<em>'+PH+'</em><em>'+EN+'</em>')+'</div>'}).join('');
 var md=document.getElementById('md');
 document.getElementById('cl').addEventListener('click',function(e){var a=e.target.closest('a[aria-label="전화"]');if(a){var n=a.parentNode.querySelector('.nm');if(n)n.style.display='block'}});
 document.getElementById('ctb').onclick=function(){md.classList.add('on')};
@@ -354,7 +354,7 @@ wb.onclick=function(){var n=document.getElementById('wn'),m=document.getElementB
  if(!nv||!mv){wsay('이름과 내용을 입력해 주세요','');return}
  var done=function(x){wb.textContent='전달 완료';wb.disabled=true;wsay('소중한 글 감사합니다!','따뜻한 마음 잘 전달되었어요 🤎',x)};
  if(GID.n&&GID.m){var f=document.getElementById('gform2'),ok=false;f.innerHTML='';[[GID.n,nv],[GID.m,mv]].forEach(function(p){var i=document.createElement('input');i.type='hidden';i.name='entry.'+p[0];i.value=p[1];f.appendChild(i)});document.getElementById('gf2').onload=function(){ok=true;done()};f.submit();setTimeout(function(){if(!ok)wsay('전달하지 못했어요','잠시 후 다시 시도해 주세요')},8000)}
- else{var a=document.createElement('a');a.href='sms:'+CT[5][2]+'?&body='+encodeURIComponent('[방명록] '+nv+': '+mv);a.target='_top';document.body.appendChild(a);a.click();a.remove();done('문자 앱이 열리면 전송을 눌러 주세요.')}};
+ else{var a=document.createElement('a');a.href='sms:'+CT[5][2]+'?&body='+encodeURIComponent('[방명록] '+nv+': '+mv);document.body.appendChild(a);a.click();a.remove();done('문자 앱이 열리면 전송을 눌러 주세요.')}};
 })();
 </script>
 </body>
