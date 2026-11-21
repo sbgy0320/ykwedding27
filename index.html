@@ -225,6 +225,16 @@ input,textarea,select{background:var(--ivory);border-color:var(--ivory-line)}
 .ad summary::after{border-color:var(--sub)}
 .ad>div{padding:10px 0 4px}
 .ad .ac{background:var(--ivory);border:1px solid var(--ivory-line)}
+
+:root{--beige:#f3eee6;--bline:#d4c8ae}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--beige:#2d2820;--bline:#5a4f3c}}
+:root[data-theme="dark"]{--beige:#2d2820;--bline:#5a4f3c}
+.ad summary{border-color:var(--bline)}
+.ad .ac{background:var(--beige)}
+.map{background:rgba(134,116,90,.05);border-color:var(--line)}
+.mb a{background:var(--beige)}
+#wn,#wm{background:var(--beige)}
+.map button{background:transparent;border-color:var(--line)}
 </style>
 </head>
 <body>
